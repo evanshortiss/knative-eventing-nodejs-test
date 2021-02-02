@@ -4,6 +4,7 @@ const { CloudEvent, HTTP } = require('cloudevents')
 
 const fastify = require('fastify')({ logger: true })
 const BROKER_URL = get('BROKER_URL').default('http://broker-ingress.knative-eventing.svc.cluster.local/knative-eventing/default').asUrlString()
+const HTTP_PORT = get('HTTP_PORT').default(8080).asPortNumber()
 
 fastify.get('/', async (req, reply) => {
   const ce = new CloudEvent({
@@ -27,7 +28,7 @@ fastify.get('/', async (req, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen(3000, '0.0.0.0')
+    await fastify.listen(HTTP_PORT, '0.0.0.0')
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
