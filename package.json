@@ -1,0 +1,32 @@
+{
+  "name": "knative-eventing-nodejs-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanshortiss/knative-eventing-nodejs-test.git"
+  },
+  "keywords": [],
+  "author": "Evan Shortiss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evanshortiss/knative-eventing-nodejs-test/issues"
+  },
+  "homepage": "https://github.com/evanshortiss/knative-eventing-nodejs-test#readme",
+  "dependencies": {
+    "cloudevents": "~4.0.0",
+    "env-var": "^7.0.0",
+    "fastify": "~3.11.0",
+    "got": "^11.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.22",
+    "nodemon": "^2.0.7"
+  }
+}
